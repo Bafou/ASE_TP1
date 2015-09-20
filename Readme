@@ -1,0 +1,17 @@
+Antoine PETIT
+
+Pour executer les fichiers : 
+La fonction affichant les registres : make displaystack
+La fonction multiplier avec try/throw : make trymul 
+
+
+Pour le processeur Intel en 32 bits la base de la pile se trouve sur 0xffffffff et le sommet de pile se trouvera a des adresses plus basses. 
+
+A chaque fois qu'une fonction est appelé une nouvelle pile d'execution est créé "en-dessous" de celle de la fonction qui l'appel et ainsi de suite pour chaque appels de fonction.
+
+Try_mul est fonctionnel pour les multiplications sans 0. Un segfault apparait pour le moment quand on fait une multiplication par 0, en effet après le return du throw sur le dévermineur on obtient les lignes suivantes : 
+_dl_runtime_resolve () at ../sysdeps/i386/dl-trampoline.S:37
+37	../sysdeps/i386/dl-trampoline.S: Aucun fichier ou dossier de ce type.
+39	in ../sysdeps/i386/dl-trampoline.S
+[...]
+
