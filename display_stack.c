@@ -35,6 +35,7 @@ int main (void) {
   printf("\n*******\n\n"); 
   factorielle(6);
   printf("\n");
+  factorielle(4);
   return 0;
 }  
 
